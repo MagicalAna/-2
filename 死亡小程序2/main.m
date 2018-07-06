@@ -10,6 +10,7 @@
 
 @interface Dog : NSObject <NSCoding>
 {
+    @public
     NSString *name;
     NSInteger time;
 }
@@ -43,8 +44,9 @@
 }
 @end
 
-@interface Count : Dog <NSCoding>
+@interface Count : NSObject <NSCoding>
 {
+    @public
     NSInteger sum;
     NSMutableArray *address;
 }
@@ -78,7 +80,7 @@
 }
 @end
 
-@interface Mycache : Count
+@interface Mycache : NSObject
 {
     Count *count;
 }
