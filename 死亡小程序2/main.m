@@ -86,9 +86,9 @@
 }
 -(void)upcount;
 
--(void)addObject:(Dog *)dog forKey:(NSString *)key;
+-(void)addObject:(NSObject *)dog forKey:(NSString *)key;
 
--(Dog *)objectForKey:(NSString *)key;
+-(NSObject *)objectForKey:(NSString *)key;
 
 -(void)showcount;
 
@@ -111,7 +111,7 @@
     NSString *fileName2 = [path2 stringByAppendingPathComponent:@"count"];
     [wang2 writeToFile:fileName2 atomically:YES];
 }
--(void)addObject:(Dog *)dog forKey:(NSString *)key{
+-(void)addObject:(NSObject *)dog forKey:(NSString *)key{
     if(count->sum<5)
     {
         [count.address addObject:key];
@@ -153,7 +153,7 @@
     NSString *fileName2 = [path2 stringByAppendingPathComponent:@"count"];
     [wang2 writeToFile:fileName2 atomically:YES];
 }
--(Dog *)objectForKey:(NSString *)key{
+-(NSObject *)objectForKey:(NSString *)key{
     NSArray *myArray = [count.address copy];
     
     NSUInteger index = [myArray indexOfObject:key];
